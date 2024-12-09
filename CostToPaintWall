@@ -1,0 +1,46 @@
+#Ashton Pleickhardt
+#Program to calculate the cost to paint a wall
+
+import math
+
+#Initializng Height and Width Step 1
+height = float(input("Enter the wall height: "))
+width = float(input("Enter the wall width: "))
+paintCost = float(input("Enter the paint cost: "))
+
+area = height * width
+
+'''Step 2: Calculate and output the amount of paint needed to three decimal places. 
+One gallon of paint covers 350 square feet.'''
+ONE_GALLON_PAINT = 350
+paintNeeded = area / ONE_GALLON_PAINT
+
+#STEP 3: Calculate and output the number of 1-gallon cans needed to paint the wall
+cans_needed = math.ceil(paintNeeded)
+
+'''STEP 4:  Calculate and output the paint cost, sales tax of 7%, and total cost. 
+Dollar values are output with two decimal places. '''
+paint_cost = cans_needed * paintCost
+taxrate = 0.07
+sales_tax = paint_cost * taxrate
+total_cost = paint_cost + sales_tax
+
+#------------------------------------------------------------------------------
+#PRINT STATEMENTS
+print("Wall Area: ", Area, "sq ft")
+print()
+
+print("Paint needed: %.3f gallons" % paintNeeded)
+print()
+
+print("Cans needed: ", cans_needed, "can(s)")
+print()
+
+print("Paint cost: $%.2f" % paint_cost)
+print()
+
+print("Sales tax: $%.2f" % sales_tax)
+print()
+
+print("Total cost: $%.2f" % total_cost)
+print()
